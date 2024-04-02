@@ -1,10 +1,10 @@
-import { createSignal, createEffect, createMemo } from "solid-js";
+import { createSignal, createMemo, JSX, ParentProps} from "solid-js";
 import { count } from "./counter";
 
-function Layout({ children }) {
+function Layout(props: ParentProps): JSX.Element {
   return (
     <>
-      <div class="flex flex-col justify-center">{children}</div>
+      <div class="flex flex-col justify-center">{props.children}</div>
     </>
   );
 }

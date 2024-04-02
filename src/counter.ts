@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Countable from "countable";
 
 /*
@@ -8,7 +9,7 @@ characters:      文字数。
 all:             スペースと改行を含むすべての文字の数。
 */
 
-interface CountResult {
+export interface CountResult {
   paragraphs: number;
   sentences: number;
   words: number;
@@ -17,7 +18,14 @@ interface CountResult {
 }
 
 export function count(text: string): CountResult {
-  let count = {};
+  let count: CountResult = {
+    paragraphs: 0,
+    sentences: 0,
+    words: 0,
+    characters: 0,
+    all: 0,
+  };
+  // ts-ignore
   Countable.count(text, (counter) => (count = counter));
   return count;
 }
