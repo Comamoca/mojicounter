@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .scroll-box {
+    width: 500px;
+    height: 300px;
+    overflow: scroll;
+  }
+
+  .scroll-box::-webkit-scrollbar {
+    background: var(--fallback-b1, oklch(var(--b1) / 1));
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .scroll-box::-webkit-scrollbar-thumb {
+    background-color: var(
+      --fallback-s,
+      oklch(var(--s) / var(--tw-border-opacity))
+    );
+    border-radius: 20px;
+  }
+
+  .scroll-box::-webkit-scrollbar-corner {
+    background: var(--fallback-b1, oklch(var(--b1) / 1));
+  }
+}
